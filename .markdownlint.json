@@ -1,0 +1,19 @@
+{
+  "default": true,
+  "MD001": false,
+  "MD012": false,
+  "MD022": false,
+  "MD025": false,
+  "MD026": false,
+  "MD029": false,
+  "MD032": false,
+  "MD033": true,
+  "MD034": false,
+  "MD036": false,
+  "MD037": false,
+  "MD041": false,
+  "MD009": {
+    "br_spaces": 2
+  }
+}
+

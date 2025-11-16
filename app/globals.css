@@ -1,0 +1,444 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* 呼吸空间色彩系统 */
+  --space-deep: #1a1b28;
+  --space-medium: #2a2d3a;
+  --space-light: #3a3d4a;
+  --glow-soft: rgba(255, 255, 255, 0.8);
+  --glow-subtle: rgba(255, 255, 255, 0.4);
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: var(--glow-soft);
+  overflow-x: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--night-blue);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--mint-blue);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5ce0c0;
+}
+
+/* 诗歌字体样式 */
+.font-serif {
+  font-family: 'Georgia', 'Noto Serif', serif;
+}
+
+/* 柔和光感效果 */
+.glow {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3),
+               0 0 40px rgba(255, 255, 255, 0.2),
+               0 0 60px rgba(255, 255, 255, 0.1);
+}
+
+/* 漂浮动画 */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* 柔和脉冲动画 */
+@keyframes pulseSoft {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulseSoft 2s ease-in-out infinite;
+}
+
+/* iOS风格滑块样式 */
+input[type="range"].slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  outline: none;
+  background: transparent;
+}
+
+input[type="range"].slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+input[type="range"].slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* 高级毛玻璃效果 */
+.backdrop-blur-md {
+  -webkit-backdrop-filter: blur(16px) saturate(150%) brightness(1.1);
+  backdrop-filter: blur(16px) saturate(150%) brightness(1.1);
+}
+
+.backdrop-blur-lg {
+  -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(1.15);
+  backdrop-filter: blur(20px) saturate(180%) brightness(1.15);
+}
+
+.backdrop-blur-sm {
+  -webkit-backdrop-filter: blur(12px) saturate(120%) brightness(1.05);
+  backdrop-filter: blur(12px) saturate(120%) brightness(1.05);
+}
+
+/* 空间层次效果 */
+.space-layer-1 {
+  background: linear-gradient(180deg, 
+    rgba(26, 27, 40, 0.8) 0%, 
+    rgba(42, 45, 58, 0.6) 50%, 
+    rgba(58, 61, 74, 0.4) 100%);
+}
+
+.space-layer-2 {
+  background: radial-gradient(ellipse at center, 
+    rgba(255, 255, 255, 0.03) 0%, 
+    transparent 70%);
+}
+
+/* 选择文本颜色 */
+::selection {
+  background: rgba(100, 255, 218, 0.3);
+  color: var(--star-white);
+}
+
+/* 平滑滚动 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 禁用移动端点击高亮 */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 卡片悬停效果 */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+}
+
+/* 3D翻页效果 */
+.perspective-\[2000px\] {
+  perspective: 2000px;
+}
+
+/* 确保3D变换渲染正确 */
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* 毛玻璃组件系统 */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(150%) brightness(1.1);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+.glass-button {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  transition: all 0.4s ease;
+}
+
+.glass-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.glass-slider {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  height: 4px;
+}
+
+.glass-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.glass-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* 加载动画 */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  animation: shimmer 2s infinite;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(100, 255, 218, 0.1) 50%,
+    transparent 100%
+  );
+  background-size: 1000px 100%;
+}
+
+/* 白色闪光字体效果 */
+@keyframes sparkle {
+  0%, 100% {
+    text-shadow: 
+      0 0 5px rgba(255, 255, 255, 0.8),
+      0 0 10px rgba(255, 255, 255, 0.6),
+      0 0 15px rgba(255, 255, 255, 0.4),
+      0 0 20px rgba(255, 255, 255, 0.2);
+  }
+  25% {
+    text-shadow: 
+      0 0 10px rgba(255, 255, 255, 1),
+      0 0 20px rgba(255, 255, 255, 0.8),
+      0 0 30px rgba(255, 255, 255, 0.6),
+      0 0 40px rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    text-shadow: 
+      0 0 15px rgba(255, 255, 255, 1),
+      0 0 30px rgba(255, 255, 255, 0.9),
+      0 0 45px rgba(255, 255, 255, 0.7),
+      0 0 60px rgba(255, 255, 255, 0.5);
+  }
+  75% {
+    text-shadow: 
+      0 0 10px rgba(255, 255, 255, 1),
+      0 0 20px rgba(255, 255, 255, 0.8),
+      0 0 30px rgba(255, 255, 255, 0.6),
+      0 0 40px rgba(255, 255, 255, 0.4);
+  }
+}
+
+/* 呼吸光感动画 */
+@keyframes breathe {
+  0%, 100% {
+    text-shadow: 
+      0 0 20px rgba(255, 255, 255, 0.2),
+      0 0 40px rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    text-shadow: 
+      0 0 30px rgba(255, 255, 255, 0.4),
+      0 0 60px rgba(255, 255, 255, 0.2);
+  }
+}
+
+@keyframes breathe-subtle {
+  0%, 100% {
+    text-shadow: 
+      0 0 15px rgba(255, 255, 255, 0.15),
+      0 0 30px rgba(255, 255, 255, 0.08);
+  }
+  50% {
+    text-shadow: 
+      0 0 25px rgba(255, 255, 255, 0.25),
+      0 0 50px rgba(255, 255, 255, 0.15);
+  }
+}
+
+.white-sparkle {
+  color: white !important;
+  animation: sparkle 3s ease-in-out infinite;
+}
+
+.white-sparkle-gentle {
+  color: white !important;
+  animation: sparkle-gentle 4s ease-in-out infinite;
+}
+
+.white-sparkle-strong {
+  color: white !important;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.white-sparkle-text {
+  color: white !important;
+  text-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.6),
+    0 0 30px rgba(255, 255, 255, 0.4),
+    0 0 40px rgba(255, 255, 255, 0.2);
+}
+
+/* 呼吸空间字体系统 */
+h1, h2, h3, h4, h5, h6, p, span, div {
+  color: var(--glow-soft) !important;
+  text-shadow: 
+    0 0 20px rgba(255, 255, 255, 0.2),
+    0 0 40px rgba(255, 255, 255, 0.1) !important;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+}
+
+/* 标题柔和光感 */
+h1 {
+  animation: breathe 4s ease-in-out infinite !important;
+}
+
+h2, h3 {
+  animation: breathe-subtle 6s ease-in-out infinite !important;
+}
+
+/* 按钮文字保持原有颜色 */
+button, .btn, .pixel-button {
+  color: inherit !important;
+  text-shadow: none !important;
+}
+
+/* 链接文字保持白色闪光 */
+a {
+  color: white !important;
+  text-shadow: 
+    0 0 8px rgba(255, 255, 255, 0.7),
+    0 0 16px rgba(255, 255, 255, 0.5),
+    0 0 24px rgba(255, 255, 255, 0.3) !important;
+}
+
+/* ========== AURA 视觉隔离区（避免全局发光样式干扰） ========== */
+.aura-container {
+  background: #f4f8f6; /* 轻柔浅绿背景 */
+  color: #111827; /* 灰黑正文 */
+}
+.aura-container * {
+  color: inherit !important;
+  text-shadow: none !important;
+  letter-spacing: normal;
+}
+.aura-container {
+  --aura-primary: #10b981;            /* 绿 Primary */
+  --aura-primary-600: #059669;        /* 深绿 */
+  --aura-primary-700: #047857;
+  --aura-surface: #ffffff;            /* 白色卡片 */
+  --aura-bg: #f4f8f6;                 /* 页面背景 */
+  --aura-border: #d1fae5;             /* 绿系边框 */
+  --aura-muted: #64748b;              /* 说明文字 */
+  --aura-ai-bubble: #fff9e9;          /* AI 米黄色 */
+  --aura-user-bubble: #eaf7ee;        /* 用户浅绿 */
+  --aura-radius-lg: 20px;             /* 大圆角 */
+  --aura-shadow: 0 14px 40px rgba(2, 44, 34, 0.12);
+  --aura-shadow-soft: 0 8px 26px rgba(2, 44, 34, 0.10);
+}
+.aura-container .aura-card {
+  background: var(--aura-surface);
+  border: 1px solid var(--aura-border);
+  border-radius: var(--aura-radius-lg);
+  box-shadow: var(--aura-shadow);
+}
+.aura-container .aura-bubble-ai {
+  background: var(--aura-ai-bubble);
+  border: 1px solid #fde68a40; /* amber-200(透明) */
+  color: #0f172a;
+}
+.aura-container .aura-bubble-user {
+  background: var(--aura-user-bubble);
+  border: 1px solid var(--aura-border);
+  color: #0f172a;
+}
+.aura-container .aura-btn-primary {
+  background: linear-gradient(180deg, #6fb994 0%, #59a882 100%);
+  color: #ffffff;
+  border-radius: 9999px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.22), 0 8px 26px rgba(0,0,0,0.18);
+}
+.aura-container .aura-input {
+  border: 1px solid var(--aura-border);
+  background: #fff;
+  border-radius: 9999px;
+}
+.aura-container .aura-header {
+  background: #ffffff;
+  border-bottom: 1px solid var(--aura-border);
+}
+.aura-container .aura-title {
+  color: #064e3b !important;
+}
+.aura-container .aura-subtle {
+  color: var(--aura-muted) !important;
+}
+.aura-container h1,
+.aura-container h2,
+.aura-container h3,
+.aura-container h4 {
+  animation: none !important;
+}
+.aura-container .text-slate-500 { color: #64748b !important; }
+.aura-container .text-emerald-900 { color: #064e3b !important; }
+.aura-container .text-emerald-800 { color: #065f46 !important; }
+.aura-container .text-emerald-700 { color: #047857 !important; }
+.aura-container .border-emerald-100 { border-color: #d1fae5 !important; }
+.aura-container .bg-emerald-50 { background-color: #ecfdf5 !important; }
+.aura-container .bg-white { background-color: #ffffff !important; }
