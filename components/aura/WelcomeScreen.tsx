@@ -118,7 +118,7 @@ export function WelcomeScreen({ onStart }: WelcomeScreenProps) {
 								<h2>Hi，我是 AURA</h2>
 							</div>
 							<p className="text-slate-500 leading-relaxed">
-								我一直在这儿听你说话。无论是"我不想写作业"还是"这次考试排名我不满意"，我都会温柔回应、陪你对话，并引导你一步步看清情绪背后的原因。
+								我一直在这儿听你说话。无论是&quot;我不想写作业&quot;还是&quot;这次考试排名我不满意&quot;，我都会温柔回应、陪你对话，并引导你一步步看清情绪背后的原因。
 							</p>
 						</div>
 
@@ -126,7 +126,7 @@ export function WelcomeScreen({ onStart }: WelcomeScreenProps) {
 							<p className="text-emerald-900">💡 我可以帮你：</p>
 							<ul className="space-y-2 text-emerald-800">
 								<li>• 更好地理解和表达自己的情绪</li>
-								<li>• 从"我学不下去"到"我需要更好地接受自己"</li>
+								<li>• 从&quot;我学不下去&quot;到&quot;我需要更好地接受自己&quot;</li>
 								<li>• 学习调节情绪的实用方法</li>
 							</ul>
 						</div>
